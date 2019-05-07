@@ -1,6 +1,19 @@
- 
-URxvt.font:		xft:monospace:size=11
+URxvt.depth: 32
+URxvt*font:	xft: UbuntuMono Nerd Font Mono:size=13, \
+            xft: Monospace:size=13
+                    
 URxvt.scrollBar:	false
+
+!! Extentions
+URxvt.perl-ext-common:  default,matcher,resize-font,url-select,keyboard-select,clipboard
+
+!!Resize-font
+URxvt.resize-font.smaller:  C-j
+URxvt.resize-font.bigger: C-k
+
+!!Clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M.v: perl:clipboard:paste
 
 !! special
 *foreground:   #bfcada
