@@ -3,6 +3,16 @@
 #
 
 
+#Command Aliases
+alias p="sudo pacman"
+alias r="ranger"
+alias cfr="cd ~/.config/ranger"
+alias cf="cd ~/.config"
+alias m="ncmpcpp"
+alias home="cd ~"
+alias d="6cord -u garettf999@gmail.com -p Garray1234!"
+
+
 #Import colorscheme from 'wal'
 (cat ~/.cache/wal/sequences &)
 #alternate
@@ -161,6 +171,8 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+alias python='/usr/bin/python3.6m'
 
-
+#runs neofetch
 neofetch
+
