@@ -1,6 +1,6 @@
 URxvt.depth: 32
-URxvt*font:	xft: UbuntuMono Nerd Font Mono:size=13, \
-            xft: Monospace:size=13
+URxvt*font:	xft: UbuntuMono Nerd Font Mono:pixelsize=14:minspace=False,
+            xft: Monospace:pixelsize=20:minspace=False
                     
 URxvt.scrollBar:	false
 
@@ -10,6 +10,12 @@ URxvt.perl-ext-common:  default,matcher,resize-font,url-select,keyboard-select,c
 !!Resize-font
 URxvt.resize-font.smaller:  C-j
 URxvt.resize-font.bigger: C-k
+
+
+!!St settings
+*.font: UbuntuMono Nerd Font Mono:pixelsize=15:antialias=true:autohint:true;
+*.alpha: 120
+
 
 !!Clipboard
 URxvt.keysym.M-c: perl:clipboard:copy

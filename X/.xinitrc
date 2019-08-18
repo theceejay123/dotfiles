@@ -4,7 +4,12 @@
 #
 # Executed by startx (run your window manager from here)
 
-wal -R
+
+#From pywal wiki:
+  # Add this to your .xinitrc or whatever file starts programs on startup.
+  # -R restores the last colorscheme that was in use.
+  wal -n -R
+   feh --no-xinerama --no-fehbg --bg-center "$(< "${HOME}/.cache/wal/wal")"
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap

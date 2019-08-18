@@ -10,7 +10,8 @@ alias cfr="cd ~/.config/ranger"
 alias cf="cd ~/.config"
 alias m="ncmpcpp"
 alias home="cd ~"
-alias d="6cord -u garettf999@gmail.com -p [password]"
+alias d="6cord -u garettf999@gmail.com -p Garray1234!"
+alias xampp="sudo bash /opt/lampp/xampp start"
 
 
 #Import colorscheme from 'wal'
@@ -21,7 +22,7 @@ cat ~/.cache/wal/sequences
 source ~/.cache/wal/colors-tty.sh
 
 
-
+export EDITOR=code
 
 [[ $- != *i* ]] && return
 
