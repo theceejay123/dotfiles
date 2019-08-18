@@ -10,7 +10,7 @@ alias cfr="cd ~/.config/ranger"
 alias cf="cd ~/.config"
 alias m="ncmpcpp"
 alias home="cd ~"
-alias d="6cord -u garettf999@gmail.com -p Garray1234!"
+alias d="6cord -u "
 alias xampp="sudo bash /opt/lampp/xampp start"
 
 
