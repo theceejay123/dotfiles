@@ -1,0 +1,10 @@
+URxvt.scrollBar: false
+URxvt.depth: 32
+URxvt.font: xft: UbuntuMono Nerd Font Mono:pixelsize=16
+!URxvt.transparent: true
+URxvt.background: [95]#311e30
+!URxvt.shading: 50
+!URxvt.tintColor: #311e30
+URxvt.blurRadius: 3
+URxvt.geometry: 100x30
+URxvt.internalBorder: 20
