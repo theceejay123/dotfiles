@@ -1,5 +1,5 @@
 # My Dotfiles
-
+## Too lazy to fix right now but updated dots are in the `updated_dots` folder
 This is a collection of my dotfiles I use on my Linux installation currently Manjaro KDE edition, using i3-gaps though)
 
 Program configs you can find here:
