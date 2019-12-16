@@ -1,0 +1,59 @@
+{
+	"icons": [ "paxy97", "awesome-fonts" ],
+	"defaults": {
+		"warning": {
+			"fg": "#bcb1a3",
+			"bg": "#1c3b56"
+		},
+		"critical": {
+			"fg": "#FDFFFC",
+			"bg": "#FF0022"
+		},
+		"default-separators": false,
+		"separator-block-width": 0
+	},
+	"cycle": [
+		{
+			"fg": "#bcb1a3",
+			"bg": "#1c3b56"
+		},
+		{
+			"fg": "#000000",
+			"bg": "#705213"
+		}
+	],
+	"battery": {
+		"charged": {
+			"fg": "#bcb1a3",
+			"bg": "#1c3b56"
+		},
+		"AC": {
+			"fg": "#bcb1a3",
+			"bg": "#1c3b56"
+		}
+	},
+  "bluetooth": {
+      "ON": {
+			    "fg": "#FDFFFC",
+			    "bg": "#41EAD4"
+      }
+  },
+  "cmus": {
+  	"bg": "#C42021"
+  },
+    "pomodoro": {
+        "paused": {
+            "fg": "#FDFFFC",
+            "bg": "#B91372"
+        },
+        "work": {
+            "fg": "#FDFFFC",
+            "bg": "#41EAD4"
+        },
+        "break": {
+            "fg": "#FDFFFC",
+            "bg": "#011627"
+        }
+    }
+
+}

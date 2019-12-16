@@ -1,6 +1,5 @@
 ################################################################
-# Some of bindings are from Luke Smiths amazing i3 config      #
-# Check out his repo! https://github.com/LukeSmithxyz/voidrice #
+#D O T F I L E S ! ! ! !				       #
 ################################################################
 
 
@@ -10,45 +9,51 @@
 
 #export TERMINAL="urxvt"
 #export FILE="ranger"
-#set $term --no-startup-id $TERMINAL
+set $term --no-startup-id $TERMINAL
 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 
-gaps inner 8
+gaps inner 10
 
-gaps outer 4
+gaps outer 2
 
 set $mod Mod4
 
-font pango:UbuntuMono Nerd Font Mono 11
+#font pango:UbuntuMono Nerd Font Mono 11
+font pango: GohuNew
+
+set $shutdown sudo -A shutdown -h now
+
+set $reboot sudo -A reboot
 
 set $hibernate sudo -A systemctl suspend
+
+exec --no-startup-id dunst
 
 ######################
 # Startup            #
 ######################
 
-# start mopidy
-exec --no-startup-id mopidy
-
-#rerun wal -R
+# Re-run wal -R
 exec --no-startup-id wal -R
 
-exec --no-startup-id xcompmgr
-
-exec --no-startup-id xrandr --output DVI-1 --mode 1920x1080i --left-of HDMI-0
-
-#run script to grab weather image
-exec .scripts/getweather.sh
+# Start compton
+exec --no-startup-id compton --backend glx
 
 bar {
-        font pango:UbuntuMono Nerd Font Mono 11
-        status_command i3status
+	colors {
+		background #000000
+#		focused_workspace #000000 #ff84b3 #000000
+		focused_workspace #1c3b56 #1c3b56 #bcb1a3
+		statusline #ff84b3
+	}
+        #font pango:UbuntuMono Nerd Font Mono 12
+	font pango: GohuNew
+#        status_command /home/compute/Documents/Shell_Scripting/battery.sh
+	status_command /home/compute/bumblebee-status/bumblebee-status -m spotify amixer battery brightness sensors memory disk weather datetime time -p memory.format="{used} used" spotify.format="{playbackStatus} {title} - {artist}" weather.location=Winnipeg time.format="%I:%M%p" datetime.format="%A, %b. %d" disk.format="{left} left" -t darkbrown
         position top
         mode dock
-        modifier None
 }
-
 
 ######################
 # Workspace bindings #
@@ -103,13 +108,23 @@ bindsym $mod+Shift+k move up 30
 bindsym $mod+l       focus right
 bindsym $mod+Shift+l move right 30
 
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+y move left
-bindsym $mod+Shift+u move down
-bindsym $mod+Shift+i move up
-bindsym $mod+Shift+o move right
+#bindsym $mod+Shift+h move left
+#bindsym $mod+Shift+j move down
+#bindsym $mod+Shift+k move up
+#bindsym $mod+Shift+l move right
 
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # split horizontal and open terminal
 bindsym $mod+apostrophe split horizontal ;; exec urxvt
@@ -137,17 +152,17 @@ floating_modifier $mod
 # Keybindings              #
 ############################
 
-#grab weather if computer wasnt turned off
-bindsym $mod+Shift+p exec .scripts/getweather.sh
-
 # kill focused window
 bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 
 # start urxvt
 bindsym $mod+Return exec urxvt
 
+# spawn floating terminal
+bindsym $mod+Shift+Return exec --no-startup-id urxvt --class=floatingterm
+
 # start dmenu
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -i -nb '#000000' -nf '#bcb1a3' -sb '#1c3b56' -sf '#bcb1a3' -fn 'UbuntuMono Nerd Font Mono:bold:pixelsize=16'
 
 # start firefox
 bindsym $mod+Shift+w exec --no-startup-id firefox
@@ -159,7 +174,7 @@ bindsym $mod+r exec urxvt -e ranger
 bindsym $mod+Shift+r exec --no-startup-id pcmanfm
 
 # start 6cord
-bindsym $mod+c exec urxvt -e 6cord -u garettf999@gmail.com -p Garray1234!
+bindsym $mod+c exec urxvt -e 6cord -u email -p passwd
 
 # start discord (gui)
 bindsym $mod+Shift+d exec --no-startup-id discord
@@ -177,11 +192,41 @@ bindsym $mod+m exec urxvt -e ncmpcpp
 bindsym $mod+plus exec amixer -D pulse set Master 2%+
 bindsym $mod+minus exec amixer -D pulse set Master 2%-
 
+# start nmtui
+bindsym $mod+w exec urxvt -e nmtui
+
+# play dorf fort
+bindsym $mod+Shift+f exec urxvt -e dwarffortress
+
+# brightness up
+bindsym $mod+Shift+m exec xbacklight -inc 2
+bindsym $mod+Shift+n exec xbacklight -dec 2
+
+# i3lock
+bindsym $mod+F3 exec ~/Documents/Projects/bash_scripts/lock.sh
+
+# GIMP flatpak
+bindsym $mod+Shift+g exec flatpak run org.gimp.GIMP
+
+# Take screenshot
+#bindsym Print exec "scrot ~/Pictures/AdminPicturesForManuals/$(date --iso-8601='seconds').png -m -e 'xclip -selection c -t image/png < $f'"
+bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
+
+
 
 #~*~~**Function Keys**~~*~#
 
 #restart i3
 bindsym $mod+F2 restart
+
+#mount
+#bindsym $mod+F9 exec --no-startup-id dmenumount
+
+# Emoji List
+bindsym $mod+F8 exec ~/Documents/Projects/bash_scripts/dmenuunicode
+
+# dmenu video launcher
+bindsym $mod+F10 exec ~/Documents/Shell_Scripting/dmenu_videos.sh
 
 #End Function Keys
 

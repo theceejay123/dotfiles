@@ -1,19 +1,10 @@
-# github.com/rafi i3status config
-
-# i3status configuration file
-# see "man i3status" for documentation.
-
-# It is important that this file is edited as UTF-8.
-# The following line should contain a sharp s:
-# ß
-# If the above line is not correctly displayed, fix your editor first!
 
 general {
+	interval = 1
 	colors = true
-	color_good = "#BBBBBB"
-	color_bad = "#CC1616"
-	color_degraded = "#55858E"
-	interval = 2
+	color_good = "#ff84b3"
+	color_bad = "#ff84b3"
+	color_degraded = "#ff84b3"
 }
 
 order += "volume master"
