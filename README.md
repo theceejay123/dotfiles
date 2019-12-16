@@ -1,6 +1,5 @@
 # My Dotfiles
-## Too lazy to fix right now but updated dots are in the `updated_dots` folder
-This is a collection of my dotfiles I use on my Linux installation currently Manjaro KDE edition, using i3-gaps though)
+These are my dotfiles I currently use on Manjaro
 
 Program configs you can find here:
 * i3 (i3-gaps)
@@ -9,9 +8,4 @@ Program configs you can find here:
 * bashrc
 * ranger
 * ncmpcpp & mopidy (to use spotify with ncmpcpp. for more information on how to do this check out this guide https://wvarner.blogspot.com/2017/10/setting-up-mopidy-ncmpcpp-and-spotify.html)
-* powerline
 * neofetch
-
-More to come as I get more comfortable with Linux!
-
-Props to Luke Smith, my rice is influenced by his dotfiles due to it's naturalness and workflow.
